@@ -14,7 +14,7 @@ import com.gold.backend.service.UserService;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://frontend-despliuegue-fk7-git-main-alejandro-grandas-projects.vercel.app/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/users")
 public class UserController {
 

@@ -18,7 +18,7 @@ import com.gold.backend.service.ProductService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@CrossOrigin(origins = "https://frontend-despliuegue-fk7-git-main-alejandro-grandas-projects.vercel.app/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/ver/Produc")
 public class ProductController {
 	
