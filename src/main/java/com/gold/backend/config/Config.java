@@ -13,7 +13,7 @@ public class Config implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://frontend-despliuegue-fk7-git-main-alejandro-grandas-projects.vercel.app/")
+                        .allowedOrigins("https://frontend-despliuegue-fk7.vercel.app/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
