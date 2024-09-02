@@ -33,43 +33,10 @@ public class ProductController {
 	        return ResponseEntity.ok(Servicio.listarProductos());
 	    }
 	 
-	 
-	 @GetMapping("/Productt/{id}")
-	 public ResponseEntity<Product> ObtenerProducto(@PathVariable Integer id) {
-		try {
-			Product Product = Servicio.ObtenerProducto(id);
-			return new  ResponseEntity<Product>(Product,HttpStatus.OK);
-		}catch(Exception excepcion) {
-			return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
-		}
-		
-		
-		}
-	 
 	 @PostMapping("/Products")
 	 public void GuardarProducto(@RequestBody Product product) {
 		 Servicio.guardarProducto(product);
 	 	}
-	 
-	 @PutMapping("/Productz/{id}") 
-	 public ResponseEntity<?>ActualizarProducto(@RequestBody Product product, @PathVariable Integer id){
-		try {
-			Product ProductoExistente = Servicio.ObtenerProducto(id);
-			ProductoExistente.setNAME_PRODUCT(product.getNAME_PRODUCT());
-			ProductoExistente.setDESCRIPTION_PRODUCT(product.getDESCRIPTION_PRODUCT());
-			ProductoExistente.setAMOUNT_PRODUCT(product.getAMOUNT_PRODUCT());
-			ProductoExistente.setPRICE_PRODUCT(product.getPRICE_PRODUCT());
-			
-			Servicio.guardarProducto(ProductoExistente);
-			
-			Servicio.guardarProducto(product);
-			return new  ResponseEntity<Product>(HttpStatus.OK);
-		}catch(Exception excepcion) {
-			return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
-			 
-		}
-			 
-	 }
 	 
 	 @DeleteMapping("/ProductE/{id}") 
 	 public void EliminarProducto(@PathVariable Integer id) {
